@@ -14,7 +14,7 @@ Most of the native bootstrap options are available. For complete documentation
 go to http://www.bootstraptoggle.com/
 
 To unlock the styling and custom features bootstrap provides simply define them
-in your option parameters.
+in your options parameters.
 
 <field name="myboolean" 
        widget="bs_toggle" 
