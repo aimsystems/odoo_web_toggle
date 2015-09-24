@@ -4,17 +4,30 @@ Odoo Backend bootstrap-toggle widget for boolean fields
 
 Odoo Backend bootstrap-toggle widget for boolean fields
 
-This is a bare bones first release of bootstrap's toggle widget.
-
 This works in odoo version 8 (and although I have not tested, probably 9).
 
 In your xml view file simply define any boolean field as shown below.
 
-<field name="myboolean" widget="bs_toggle"/>
+<field name="myboolean" widget="bs_toggle" options="{}"/>
 
-As things are right now I have not provided any additional options such as defining the text for the toggle with parameters from your field or even the ability to change the colors or sizes/shapes. Please be easy on comments as I am a new programmer and this is my first attempt at something like this.
+Most of the native bootstrap options are available. For complete documentation 
+go to http://www.bootstraptoggle.com/
 
-Hope you like it!
+To unlock the styling and custom features bootstrap provides simply define them
+in your option parameters.
+
+<field name="myboolean" 
+       widget="bs_toggle" 
+       options="{
+                 'data-on':'Yes',
+                 'data-off':'No',
+                 'data-onstyle':'primary',
+                 'data-offstyle':'danger',
+                 'data-size':'mini'
+                 }"/>
+
+There are many options available which can be found in the documentation at bootstrap's website
+listed above.
 
 Phillip
 
