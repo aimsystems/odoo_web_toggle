@@ -23,15 +23,38 @@ local.FieldBooleanToggle = instance.web.form.AbstractField.extend({
     },
     render_value: function() {
         this.$checkbox[0].checked = this.get('value');
+        var toggle_options = {};
+        if (typeof this.options['data-on'] !== "undefined"){
+            toggle_options.on = this.options['data-on'];
+        }
+        if (typeof this.options['data-off'] !== "undefined"){
+            toggle_options.off = this.options['data-off'];
+        }
+        if (typeof this.options['data-size'] !== "undefined"){
+            toggle_options.size = this.options['data-size'];
+        }
+        if (typeof this.options['data-width'] !== "undefined"){
+            toggle_options.width = this.options['data-width'];
+        }
+        if (typeof this.options['data-height'] !== "undefined"){
+            toggle_options.height = this.options['data-height'];
+        }
+        if (typeof this.options['data-onstyle'] !== "undefined"){
+            toggle_options.onstyle = this.options['data-onstyle'];
+        }
+        if (typeof this.options['data-offstyle'] !== "undefined"){
+            toggle_options.offstyle = this.options['data-offstyle'];
+        }
+        if (typeof this.options['data-style'] !== "undefined"){
+            toggle_options.style = this.options['data-style'];
+        }
+
         if (this.get('value')){
-            this.$checkbox.bootstrapToggle({ on: 'Yes', off: 'No' });
-            this.set('data-size','mini');
+            this.$checkbox.bootstrapToggle(toggle_options);
             this.$checkbox.bootstrapToggle('on');
         } else {
-            this.$checkbox.bootstrapToggle({ on: 'Yes', off: 'No' });
-            this.set('data-size','mini');
+            this.$checkbox.bootstrapToggle(toggle_options);
             this.$checkbox.bootstrapToggle('off');
-            
         }
     },
     focus: function() {
