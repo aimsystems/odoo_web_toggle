@@ -2,8 +2,6 @@
 Odoo Backend bootstrap-toggle widget for boolean fields
 
 
-Odoo Backend bootstrap-toggle widget for boolean fields
-
 This works in odoo version 8 (and although I have not tested, probably 9).
 
 In your xml view file simply define any boolean field as shown below.
